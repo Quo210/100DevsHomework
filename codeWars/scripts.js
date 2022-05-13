@@ -54,3 +54,14 @@ function deleteNth(arr,n){
       return a
     },[])
   }
+
+  //
+
+  function XO(str) {
+    const e = str.toLowerCase().split("").reduce((a,b) => { 
+    (!a[b])? a[b] = 1 : a[b]++; 
+    return a },{});
+    const s = Object.values(e);
+    if(s.length == 1) return false;
+    return s.every(val => val == s[0]);
+  }
