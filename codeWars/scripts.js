@@ -33,3 +33,24 @@ function saveRhino (arr) {
     }
     
 }
+
+//
+
+// Sum Numbers
+function sum (numbers) {
+    "use strict";
+  if(numbers.length == 0) return 0;
+  return numbers.map(elem => parseFloat(elem)).reduce((a,b) => a + b)
+   
+};
+
+//
+
+function deleteNth(arr,n){
+    return arr.reduce((a,b) => {
+      let instances = 0;
+      a.forEach(elem => { if (elem == b) instances++ });
+      (instances < n)? a.push(b) : false ;
+      return a
+    },[])
+  }
