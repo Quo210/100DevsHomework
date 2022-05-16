@@ -65,3 +65,80 @@ function deleteNth(arr,n){
     if(s.length == 1) return false;
     return s.every(val => val == s[0]);
   }
+
+  //
+
+  function sumMix(x){
+    return x.reduce((a,b)=>{
+      return a + parseInt(b);
+    },0)
+  }
+
+  //
+
+  function towerBuilder(nFloors) {
+    const arr = [];
+    for (let i = 0; i < nFloors; i++){
+      let myStr = "";
+      let counter = 0;
+      const strLen = (i*2)+1;
+      while(counter < strLen){
+        myStr += "*";
+        counter++
+      }
+      arr.push(myStr);
+    }
+    
+    arr.reverse();
+    for (let i = 0; i < arr.length; i++){
+      const extraWhites = i * 2;
+      let target = arr[i];
+      let whites = "";
+      while(whites.length != extraWhites / 2){
+        whites += " ";
+      }
+      arr[i] = whites + target + whites;
+    }
+    arr.reverse()
+    
+    return arr
+  }
+
+  //
+
+  function descendingOrder(n){
+    return parseInt( n.toString().split("").map(a => parseInt(a)).sort((a,b)=>b-a).join("") )
+  }
+
+  //
+
+  function check(a, x) {
+    return a.includes(x)
+  }
+
+  //
+
+  function disemvowel(str) {
+    const reg = /a?e?i?o?u?/ig;
+    return str.replace(reg,"");
+  }
+
+  //
+
+  function DNAtoRNA(dna) {
+    return dna.replace(/T/g,"U")
+  }
+
+  //
+
+  function findUniq(arr) {
+    arr.sort((a,b) => a-b);
+    return (arr[0] == arr[1])? arr[arr.length-1] : arr[0]
+  }
+
+  //
+
+  function betterThanAverage(classPoints, yourPoints) {
+    return (classPoints.reduce((a,b)=>a+b) / classPoints.length < yourPoints)? true : false
+  }
+  
