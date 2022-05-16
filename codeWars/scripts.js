@@ -142,3 +142,43 @@ function deleteNth(arr,n){
     return (classPoints.reduce((a,b)=>a+b) / classPoints.length < yourPoints)? true : false
   }
   
+  //
+
+  function findNeedle(haystack) {
+    return `found the needle at position ${haystack.indexOf('needle')}`
+  }
+
+  function findEvenIndex(arr)
+{
+  function sumRight(pos){
+    const a = arr.slice(pos+1,arr.length).reduce((a,b)=>a+b,0);
+    return a
+  }
+  
+  function sumLeft(pos){
+    if(pos == 0){ return 0 } else {
+      const newArr = arr.slice(0,pos)
+      const a = newArr.reduce((a,b)=>a+b,0);
+      return a   
+  }
+    }
+    
+  
+  let index = undefined;
+  let counter = 0;
+  while(counter < arr.length){    
+    const end = (sumLeft(counter) == sumRight(counter));
+    (end == true)? index = counter : 0;
+    counter++;
+  }
+  
+  return (index != undefined)? index : -1;
+  
+  
+}
+
+function chain(input, fs) {
+    return fs.reduce((a,b)=>{
+      return b(a)
+    },input)
+  }
