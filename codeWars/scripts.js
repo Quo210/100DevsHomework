@@ -182,3 +182,12 @@ function chain(input, fs) {
       return b(a)
     },input)
   }
+
+  //
+
+  function getCount(str) {
+    return str.split("").reduce((a,b)=>{
+      (/[aeiou]/.test(b) == true)? a++ : a ;
+      return a
+    },0)
+  }
