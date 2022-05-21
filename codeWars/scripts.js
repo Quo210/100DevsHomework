@@ -191,3 +191,80 @@ function chain(input, fs) {
       return a
     },0)
   }
+
+  // 
+
+  function spinWords(string){
+    const words = string.split(" ");
+    let final = [];
+    words.forEach(word =>{
+      if(word.length < 5){ 
+        final.push(word) 
+        return
+      }
+      final.push( word.split("").reverse().join("") );
+    })
+    return final.join(" ")
+  }
+
+  //
+
+  function smash (words) {
+    return words.join(" ")
+ };
+
+ function lovefunc(flower1, flower2){
+  return ( (flower1 % 2 == 0) != (flower2 % 2 == 0) )? true : false
+}
+
+function digital_root(n) {
+  const splitSum = (num) => 
+  num.toString()
+  .split("")
+  .map(a => parseInt(a) )
+  .reduce( (a,b) => a + b );
+  let result = n;
+  while (result.toString().length > 1){
+    result = splitSum(result)
+  } 
+  return result
+}
+
+function litres(time) {
+  return (time != 0)? Math.floor(time * 0.5) : 0;
+}
+
+function likes(names) {
+  const l = names.length;
+  
+  function joinNames(n){
+    if(n.length < 1) return false;
+    if(n.length < 4){
+    let r = n[0];
+      for(let i = 1; i < n.length; i++){
+      (i == n.length-1)? r += ` and ${n[i]}` : r += `, ${n[i]}`;
+      }
+    return r
+    } else {
+      let c = 0;
+      const a = n.slice(2).forEach(num => c++);
+      return `${n[0]}, ${n[1]} and ${c} others like this`
+    } 
+  }
+  
+  switch(true){
+      case (l == 0):
+      return 'no one likes this'
+      break;
+      case (l == 1):
+      return `${names[0]} likes this`
+      break;
+      case (l >= 2 && l < 4):
+      return `${joinNames(names)} like this`;
+      break;
+      case (l >= 4):
+      return joinNames(names)
+      break;
+  }
+  
+}
