@@ -275,5 +275,31 @@ function solution(str){
   return str.split("").reverse().join("")
 }
 
+//7
+
+function isIsogram(str){
+  return Object.values( str.toLowerCase().split("").reduce((a,b)=>{
+    if(!a[b]) a[b] = 0; a[b]++; return a
+  },{}) ).every(element => element == 1)
+}
+
 //
+
+function basicOp(operation, value1, value2)
+{
+  switch(operation){
+      case "+":
+      return value1 + value2
+      break;
+      case "-":
+      return value1 - value2
+      break;
+      case "*":
+      return value1 * value2
+      break;
+      case "/":
+      return value1 / value2
+      break;
+  }
+}
 
