@@ -309,5 +309,16 @@ function hoopCount (n) {
   return (n >= 10)? 'Great, now move on to tricks' : "Keep at it until you get it"    
 }
 
-
-
+//6
+decodeMorse = function(morseCode){
+  const byWord = morseCode.trim().split("   ");
+  const splitByChar = (e) => e.split(" ");
+  const rosetta = Object.keys(MORSE_CODE);
+  return byWord.map(word => {
+    const byLetter = splitByChar(word);
+    const positions = byLetter.map(letter => rosetta.indexOf(letter));
+    let decodedWord = '';
+    positions.forEach(n => decodedWord += Object.values(MORSE_CODE)[n]);
+    return decodedWord
+  }).join(" ")
+}
