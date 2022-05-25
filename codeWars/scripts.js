@@ -322,3 +322,19 @@ decodeMorse = function(morseCode){
     return decodedWord
   }).join(" ")
 }
+
+
+//6
+function encode(str,  n)
+{
+  const arr = [];
+  str.split("").forEach(char => {
+    arr.push( char.charCodeAt(0) - 96 )
+  })
+  let holder = Array.from( n.toString().split("") );
+  return arr.map(num => {
+    if(holder.length == 0){
+      holder = Array.from( n.toString().split("") )
+    } return parseInt(num) + parseInt(holder.shift())
+  })
+}
