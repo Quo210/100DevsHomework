@@ -338,3 +338,38 @@ function encode(str,  n)
     } return parseInt(num) + parseInt(holder.shift())
   })
 }
+
+//7 Binary Conversion
+
+function addBinary(a,b) {
+  const remainders = [];
+  function binaryRedux(val,storage){
+    storage.push(val % 2);
+    let divided = val / 2;
+    if(divided >= 1){
+      console.log('Recursion for',divided,'Started')
+      binaryRedux(Math.floor(divided),storage)
+    } else {
+      console.log('Binary sequence obtained',storage)
+    }
+  }
+  binaryRedux((a+b),remainders);
+  remainders.reverse(); // Remember reverse MUTATES the original array
+  console.log(`${a+b} in Binary is`,
+              remainders.reduce((a,b)=>{
+    return a + b.toString()
+  },"")
+             );
+  return remainders.reduce((a,b)=>{
+    return a + b.toString()
+  },"")
+}
+
+function vowelIndices(word){
+  const regEx = /[aeiouy]/i;
+  const sWord = word.split('');
+  const locations = [];
+  for (let i = 0; i < sWord.length; i++){
+    if(regEx.test(sWord[i])) locations.push(i+1)
+  } return locations
+}
