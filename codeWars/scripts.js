@@ -373,3 +373,22 @@ function vowelIndices(word){
     if(regEx.test(sWord[i])) locations.push(i+1)
   } return locations
 }
+
+function squareDigits(num){
+  const nums = Array.from( String(num) );
+  return Number( nums.reduce((a,b)=>{
+    let number = Number(b) * Number(b);
+    a += number;
+    return a
+  },'') )
+}
+
+function highAndLow(numbers){
+  const nums = numbers.split(" ").sort((a,b)=>b-a);
+  return `${nums[0]} ${nums[nums.length-1]}`
+}
+
+function findShort(s){
+  const a = s.split(" ").sort((a,b)=>a.length - b.length)
+  return a[0].length
+}
