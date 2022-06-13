@@ -1,8 +1,17 @@
-function vowelIndices(word){
-    const regEx = /[aeiou]/;
-    const sWord = word.split('');
-    const locations = [];
-    for (let i = 0; i < sWord.length; i++){
-      if(regEx.test(sWord[i])) locations.push(i)
-    } return locations
+function findNextSquare(sq) {
+  let answer = 0;
+  let counter = sq + 1;
+  while (answer === 0){
+    const sqrt = Math.sqrt(counter);
+    if (sqrt % 1 === 0){
+      answer = counter;
+    } else {
+      counter++
+    }
   }
+  return counter
+}
+
+console.log(
+  findNextSquare(999)
+)

@@ -392,3 +392,52 @@ function findShort(s){
   const a = s.split(" ").sort((a,b)=>a.length - b.length)
   return a[0].length
 }
+
+function DNAStrand(dna){
+  const a = dna.split("");
+  const b = [];
+  a.forEach(base => {
+    switch(base){
+        case 'A':
+        b.push('T');
+        break;
+        case 'T':
+        b.push('A');
+        break;
+        case 'G':
+        b.push('C');
+        break;
+        case 'C':
+        b.push('G');
+        break;
+    }
+  });
+  return b.join("")
+}
+
+function maskify(cc) {
+  if(cc.toString().length <= 4) return cc;
+  const a = cc.toString().split("").reverse().join("");
+  let newStr = a.substring(0,4) + a.substring(4).replace(/./g,"#");
+  return newStr.split("").reverse().join("")
+}
+
+function friend(friends){
+  return friends.filter(person => person.length === 4)
+}
+
+function findNextSquare(sq) {
+  if(sq < 0) return -1;
+  if(Math.sqrt(sq) % 1 !== 0) return -1;
+  let answer = 0;
+  let counter = sq + 1;
+  while (answer === 0){
+    const sqrt = Math.sqrt(counter);
+    if (sqrt % 1 === 0){
+      answer = counter;
+    } else {
+      counter++
+    }
+  }
+  return counter
+}
