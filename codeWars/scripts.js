@@ -441,3 +441,20 @@ function findNextSquare(sq) {
   }
   return counter
 }
+
+function nbYear(p0, percent, aug, p) {
+  if(percent == 0) return 50;
+  let years = 0;
+  let p0sum = p0;
+  for (; p0sum <= p;){
+    let perc = (percent/100);
+    p0sum += Math.floor( (p0sum * perc) + aug )
+    years++
+  }
+  return years
+}
+
+function printerError(s) {
+  const a = s.split("").filter( char => !(char.charCodeAt(0) > 109) );
+  return `${s.length - a.length}/${s.length}`
+}
