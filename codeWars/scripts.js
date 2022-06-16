@@ -458,3 +458,39 @@ function printerError(s) {
   const a = s.split("").filter( char => !(char.charCodeAt(0) > 109) );
   return `${s.length - a.length}/${s.length}`
 }
+
+function rowSumOddNumbers(n) {
+  let pyramidLevel = 0;
+  let lastInt = -1;
+  let endResult = 0;
+  while (pyramidLevel != n){
+    pyramidLevel++
+    if(pyramidLevel != n){
+      for (let innerCounter = 0; innerCounter < pyramidLevel; innerCounter++){
+        lastInt += 2;
+      } 
+    }
+  }
+  if(pyramidLevel == n){
+    for (let innerCounter = 0; innerCounter < pyramidLevel; innerCounter++){
+      lastInt += 2;
+      endResult += lastInt;
+    }
+  }
+  return endResult
+}
+
+/*
+function rowSumOddNumbers(n) {
+  return Math.pow(n, 3);
+}
+*/
+
+function divisors(integer) {
+  const divisors = [];
+  for (let i = 2; i < integer; i++){
+    if(integer % i == 0) divisors.push(i)
+  } 
+  if (divisors.length == 0) return `${integer} is prime`;
+  else return divisors
+};

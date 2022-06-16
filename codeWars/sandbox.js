@@ -1,17 +1,9 @@
-function findNextSquare(sq) {
-  let answer = 0;
-  let counter = sq + 1;
-  while (answer === 0){
-    const sqrt = Math.sqrt(counter);
-    if (sqrt % 1 === 0){
-      answer = counter;
-    } else {
-      counter++
-    }
+function rowSumOddNumbers(n) {
+  let pyramidLevel = 0;
+  let lastInt;
+  let endResult = 0;
+  while (pyramidLevel != n){
+    pyramidLevel++
+    for (let innerCounter = 0; innerCounter < pyramidLevel; innerCounter++)
   }
-  return counter
 }
-
-console.log(
-  findNextSquare(999)
-)
