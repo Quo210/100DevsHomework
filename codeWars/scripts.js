@@ -494,3 +494,10 @@ function divisors(integer) {
   if (divisors.length == 0) return `${integer} is prime`;
   else return divisors
 };
+
+function solution(str, ending){
+  return (str.substring(
+    str.length - ending.length
+  ) == ending )?
+    true : false
+}
