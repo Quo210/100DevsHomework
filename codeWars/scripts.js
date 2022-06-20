@@ -501,3 +501,11 @@ function solution(str, ending){
   ) == ending )?
     true : false
 }
+
+const number = (array) => {
+  let counter = 0;
+  return array.map((str) => {
+    counter++
+    return `${counter}: ${str}`
+  })
+}
