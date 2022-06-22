@@ -509,3 +509,13 @@ const number = (array) => {
     return `${counter}: ${str}`
   })
 }
+
+function calculateYears(principal, interest, tax, desired) {
+  if(principal == desired) return 0;
+  let capital = principal;
+  let counter = 0
+  for (; capital < desired; counter++){
+    let yearlyRevenue = capital * interest
+    capital += Math.round( yearlyRevenue - (yearlyRevenue * tax) )
+  } return counter
+}
