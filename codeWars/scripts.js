@@ -518,4 +518,19 @@ function calculateYears(principal, interest, tax, desired) {
     let yearlyRevenue = capital * interest
     capital += Math.round( yearlyRevenue - (yearlyRevenue * tax) )
   } return counter
+};
+
+function dontGiveMeFive(start, end)
+{
+  const sequence = []
+  let counter = start
+  while (counter <= end){
+    sequence.push(counter)
+    counter++
+  }
+  const result = sequence.filter(num => {
+    return (!num.toString().includes("5"))
+  });
+  console.log(result)
+  return result.length
 }
