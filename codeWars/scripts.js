@@ -546,3 +546,33 @@ function breakChocolate(n,m) {
 function sumAll(arr){
   return arr.reduce((a,b)=>a+b)
 }
+
+//7
+
+function getDivisorsCnt(n){
+  let count = 0
+  for (let i = n; i != 0; i--){
+    if(n % i == 0){
+     count++
+    }
+  }
+return count
+}
+
+//7
+
+function nbDig(n, d) {
+  const baseNums = []
+  for (let i = 0; i <= n; i++){
+    let sqred = i*i;
+    baseNums.push( sqred.toString() )
+  }
+  let digits = 0;
+  baseNums.forEach(numString => {
+    let splitted = numString.split('');
+    splitted.forEach(num => {
+      if(parseInt(num) == d) digits++
+    })
+  })
+  return digits
+}
