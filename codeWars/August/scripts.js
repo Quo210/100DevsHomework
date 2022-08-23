@@ -14,3 +14,12 @@ function sortByLength (array) {
     }
     return val
   }
+
+  // return the two oldest/oldest ages within the array of ages passed in.
+function twoOldestAges(ages){
+  const a = ages.sort((a,b) =>b-a)
+  const b = [];
+   b.push(a[1],a[0])
+   return b
+ }
+ 
