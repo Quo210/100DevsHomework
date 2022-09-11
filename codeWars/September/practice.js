@@ -12,3 +12,8 @@ function removeUrlAnchor(url){
     }
     return  arr.reduce((a,b)=>a+b)
   };
+
+  function solution(nums){
+if(nums == null) return [];
+return nums.sort((a,b) => a - b )
+}
